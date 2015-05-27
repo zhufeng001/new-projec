@@ -22,6 +22,15 @@ The key's randomart image is:
 |       ..ooo     |
 +-----------------+
 
+4、将.ssh/id_rsa.pub拷贝到GitHub网站
+
+5、为了方便，设置ssh不输入口令
+# eval `ssh-agent`
+# ssh-add
+（输入passphrase）
+
+6、测试是否能联通GitHub
+#ssh git@github.com
 
 ssh -v git@github.com
 
