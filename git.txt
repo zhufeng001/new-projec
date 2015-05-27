@@ -1,0 +1,91 @@
+ssh-keygen  -C "zhu__feng001@163.com" -t  rsa
+
+[root@storage api]# ssh-keygen  -C "zhu__feng001@163.com" -t  rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+b3:6e:15:fc:c2:fc:a4:d8:d2:0b:b5:f2:96:47:e2:70 zhu__feng001@163.com
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|                 |
+|         .       |
+|          o      |
+|        So.o     |
+|        .+E.+    |
+|        +O.O     |
+|       .++B o    |
+|       ..ooo     |
++-----------------+
+
+
+ssh -v git@github.com
+
+[root@storage api]# git config --global user.name "zhufeng001"
+[root@storage api]# git config --global user.email zhu__feng001@163.com
+
+yum install git
+
+
+
+[root@storage srv]# mkdir new-project
+[root@storage srv]# cd new-project/
+[root@storage new-project]# git init
+[root@storage new-project]# touch README
+[root@storage new-project]# git add README 
+[root@storage new-project]# git commit -m 'fistr-commit'
+[root@storage new-project]# git remote add origin git@github.com:zhufeng001/new-projec.git
+
+提交git push origin master
+
+
+修改文件
+[root@storage new-project]# vim README 
+[root@storage new-project]# git status
+[root@storage new-project]# git commit -a
+[root@storage new-project]# git push origin master
+
+
+创建新的分支
+
+[root@storage new-project]# git branch (查看在那个分支)
+[root@storage new-project]# git branch new-feature （创建新的分支,把master的分支拷贝）
+[root@storage new-project]# git checkout new-feature （在分支间切换）
+[root@storage new-project]# touch f1.txt
+[root@storage new-project]# git add f1.txt 
+[root@storage new-project]# git commit -a -m 'add initial version of page cache'
+[root@storage new-project]# git push origin new-feature
+
+合并分支
+
+[root@storage new-project]# git checkout master (切换至目的分至？)
+[root@storage new-project]# git merge new-feature (合并其他的分支？)
+[root@storage new-project]# git branch (是否位于目的push的分支？)
+[root@storage new-project]# git push
+
+查看diff
+[root@storage new-project]# vim f1.txt （修改文件）
+
+提交文件，增加msg
+[root@storage new-project]# git commit -a -m 'modify f1'
+
+提交单个文件
+git commit f2.txt -m 'f2'
+
+删除文件
+git rm
+
+移动文件
+git mv
+
+克隆其他的repo？
+[root@storage srv]# git clone git@github.com:zhufeng001/GreateSrc.git
+[root@storage srv]# cd GreateSrc/
+[root@storage GreateSrc]# touch cc.txt
+[root@storage GreateSrc]# git add cc.txt 
+[root@storage GreateSrc]# git commit -a -m 'cc'
+[root@storage GreateSrc]# git push origin master
