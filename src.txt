@@ -2,7 +2,7 @@ yum provides nmap
 
 nmap -sP 192.168.1.0/24
 
-//192.168.1.115/Projects /mnt/cifs              cifs	//defaults,username=she,password=111111      0 2
+//192.168.1.115/Projects /mnt/cifs              cifs	defaults,username=she,password=111111      0 2
 
 vim 乱码
 
